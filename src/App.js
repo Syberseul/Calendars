@@ -1,20 +1,22 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Calendar from "./pages/Calendar";
+import CRUD from "./pages/CRUD";
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+      </Routes>
+      <Routes>
+        <Route path="/calendar" exact element={<Calendar />} />
+      </Routes>
+      <Routes>
+        <Route path="/edit" exact element={<CRUD />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
